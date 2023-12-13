@@ -8,7 +8,6 @@ export default function Hero() {
 					src="/Demoreel.mp4"
 					autoPlay
 					loop
-					muted
 					className="object-cover h-full w-full"
 				></video>
 			</div>
