@@ -5,7 +5,7 @@ export default function DesktopNav() {
 			<div className="flex justify-between">
 				<div>
 					<img
-						src="/logowhite.png"
+						src="/logo.png"
 						alt="logo"
 						className="md:w-20 lg:w-20 xl:w-24 2xl:w-28"
 					/>
