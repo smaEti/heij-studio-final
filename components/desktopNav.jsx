@@ -2,12 +2,12 @@ import Link from "next/link";
 export default function DesktopNav() {
 	return (
 		<div className="hidden md:block md:absolute top-0 w-full px-20 py-5">
-			<div className="flex justify-between">
+			<div className="flex justify-between items-start">
 				<div>
 					<img
 						src="/logo.png"
 						alt="logo"
-						className="md:w-20 lg:w-20 xl:w-24 2xl:w-28"
+						className="md:w-16 lg:w-16 xl:w-20 2xl:w-20"
 					/>
 				</div>
 				<div className="flex gap-5">
