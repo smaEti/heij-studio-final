@@ -1,4 +1,8 @@
 import './globals.css'
+import localFont from "next/font/local"
+
+const steiner = localFont({ src: "../public/assets/fonts/SteinerLight-JR1o.ttf", variable: "--font-steiner"});
+const outfit = localFont({ src: "../public/assets/fonts/Outfit-VariableFont_wght.ttf", variable: "--font-outfit"});
 
 export const metadata = {
   title: 'Heij Studio',
@@ -8,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${steiner.variable} ${outfit.variable}`}>{children}</body>
     </html>
   )
 }
