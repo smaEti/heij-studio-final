@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function DesktopNav() {
 	return (
-		<div className="hidden md:block md:absolute top-0 w-full px-20 py-5">
+		<div className="hidden md:block md:absolute top-0 w-full px-20 py-8">
 			<div className="flex justify-between items-start">
 				<div>
 					<img
