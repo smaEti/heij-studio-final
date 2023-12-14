@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${steiner.variable} ${outfit.variable}`}>{children}</body>
+      <body className={`${steiner.variable} ${outfit.variable} bg-background`}>{children}</body>
     </html>
   )
 }
