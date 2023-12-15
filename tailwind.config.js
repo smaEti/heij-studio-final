@@ -43,6 +43,8 @@ module.exports = {
       fontFamily: {
         outfit: ['var(--font-outfit)'],
         steiner: ['var(--font-steiner)'],
+        Aleo : ['var(--font-Aleo)'],
+        Montserrat : ['var(--font-Montserrat)']
       },
     },
   },
