@@ -16,6 +16,16 @@ module.exports = {
       },
     },
     extend: {
+      backgroundColor:{
+        background : "#FFF1D6",
+        primary : "#46724C",
+        secondry : "#FF5900"
+      },
+      colors : {
+        background : "#FFF1D6",
+        primary : "#46724C",
+        secondry : "#FF5900"
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -33,6 +43,8 @@ module.exports = {
       fontFamily: {
         outfit: ['var(--font-outfit)'],
         steiner: ['var(--font-steiner)'],
+        Aleo : ['var(--font-Aleo)'],
+        Montserrat : ['var(--font-Montserrat)']
       },
     },
   },

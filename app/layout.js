@@ -1,8 +1,8 @@
 import './globals.css'
 import localFont from "next/font/local"
 
-const steiner = localFont({ src: "../public/assets/fonts/SteinerLight-JR1o.ttf", variable: "--font-steiner"});
-const outfit = localFont({ src: "../public/assets/fonts/Outfit-VariableFont_wght.ttf", variable: "--font-outfit"});
+const aleo = localFont({ src: "../public/assets/fonts/Aleo-Medium.ttf", variable: "--font-Aleo"});
+const Montserrat = localFont({ src: "../public/assets/fonts/Montserrat-Regular.ttf", variable: "--font-Montserrat"});
 
 export const metadata = {
   title: 'Heij Studio',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${steiner.variable} ${outfit.variable}`}>{children}</body>
+      <body className={`${aleo.variable} ${Montserrat.variable} bg-primary`}>{children}</body>
     </html>
   )
 }
