@@ -15,21 +15,11 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="basis-2/6 flex flex-col gap-3 justify-center text-primary">
-          <h2>Email</h2>
-          <p>Heijstudio@gmail.com</p>
-          <hr className="bg-primary h-1" />
-          <h2>Telegram</h2>
-          <p>+98-9355525896</p>
-          <hr className="bg-primary h-1" />
-          <h2>Behance</h2>
-          <p>some address</p>
-          <hr className="bg-primary h-1" />
-          <h2>Linkedin</h2>
-          <p>some address</p>
-          <hr className="bg-primary h-1" />
-          <h2>Instagram</h2>  =
-          <p>some address</p>
+        <div className="basis-2/6 flex flex-col gap-3 justify-evenly text-primary">
+            <div>your name :</div>
+            <div>email</div>
+            <div>subject</div>
+            <div>your msg</div>
         </div>
       </div>
     </section>
