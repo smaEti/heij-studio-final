@@ -15,9 +15,9 @@ export default function MobileNav() {
 						</a>
 					</div>
                 <div className="flex flex-col gap-7 mt-9">
-                    <Link href="/" className="font-Aleo font-semibold text-xl">Projects</Link>
-                    <Link href="/" className="font-Aleo font-semibold text-xl">About Us</Link>
-                    <Link href="/" className="font-Aleo font-semibold text-xl">Contact Us</Link>
+                    <Link href="#projects" className="font-Aleo font-semibold text-xl">Projects</Link>
+                    <Link href="#about" className="font-Aleo font-semibold text-xl">About Us</Link>
+                    <Link href="#contact" className="font-Aleo font-semibold text-xl">Contact Us</Link>
                 </div>
 				</SheetContent>
 			</Sheet>

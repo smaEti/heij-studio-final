@@ -2,8 +2,8 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section className="md:h-screen flex justify-center items-center px-5 my-20">
-      <div className="bg-background md:h-[70vh] rounded-[60px] flex flex-col md:flex-row md:justify-around md:container p-8 gap-5">
+    <section id={'contact'} className="md:h-screen flex justify-center items-center px-5 my-20">
+      <div className="bg-background rounded-[60px] flex flex-col md:flex-row md:justify-around md:container p-8 gap-5">
         <div className="basis-3/6 flex flex-col items-start mb-8">
           <img
             src="/3dlogo.png"
@@ -11,7 +11,7 @@ export default function Contact() {
             className="h-3/4 w-1/2 self-center"
           />
           <div className="basis-1/2 flex flex-col gap-5 ">
-            <h1 className="font-extrabold text-4xl md:text-9xl font-serif text-primary">
+            <h1 className="font-semibold text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl font-Aleo md:pl-2 text-primary">
               Contact Us
             </h1>
             <p className="text-primary font-Montserrat text-2xl md:text-4xl ">
@@ -23,7 +23,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="basis-2/6 flex flex-col gap-3  text-primary">
+        <div className="basis-2/6 flex flex-col gap-3 justify-center text-primary font-Montserrat">
           <ContactForm />
         </div>
       </div>
