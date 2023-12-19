@@ -1,7 +1,7 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
-export default function MobileNav() {
+export default function MobileProjectNav() {
 	return (
 		<>
 			<Sheet>
@@ -15,9 +15,7 @@ export default function MobileNav() {
 						</a>
 					</div>
                 <div className="flex flex-col gap-7 mt-9">
-                    <Link href="/" className="font-Aleo font-semibold text-xl">Projects</Link>
-                    <Link href="/" className="font-Aleo font-semibold text-xl">About Us</Link>
-                    <Link href="/" className="font-Aleo font-semibold text-xl">Contact Us</Link>
+                    <Link href="/" className="font-Aleo font-semibold text-xl">Back to main page</Link>
                 </div>
 				</SheetContent>
 			</Sheet>

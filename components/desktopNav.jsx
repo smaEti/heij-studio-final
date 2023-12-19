@@ -13,19 +13,19 @@ export default function DesktopNav() {
 				<div className="flex gap-5 items-center justify-between">
 					<Link
 						href="#"
-						className=" text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-serif xl:text-base 2xl:text-xl underline underline-offset-8"
+						className=" text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-Aleo xl:text-base 2xl:text-xl underline underline-offset-8"
 					>
 						Projects
 					</Link>
 					<Link
 						href="#"
-						className="text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-serif xl:text-base 2xl:text-xl underline underline-offset-8"
+						className="text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-Aleo xl:text-base 2xl:text-xl underline underline-offset-8"
 					>
 						About Us
 					</Link>
 					<Link
 						href="#"
-						className="text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-serif xl:text-base 2xl:text-xl underline underline-offset-8"
+						className="text-white hover:text-secondry w-24 lg:w-auto lg:h-fit md:text-xs font-semibold font-Aleo xl:text-base 2xl:text-xl underline underline-offset-8"
 					>
 						Contact Us
 					</Link>
