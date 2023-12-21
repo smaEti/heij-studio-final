@@ -40,7 +40,7 @@ export default async function handler(req, res) {
             is_seen: false,
           },
         });
-        res.status(200).send(result);
+        res.status(200).send({message : "request sent successfully!"});
       }
     } catch (error) {
       return res.status(500).json({ message: error.message });

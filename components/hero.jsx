@@ -8,6 +8,8 @@ export default function Hero() {
 					src="/Demoreel.mp4"
 					autoPlay
 					loop
+					muted
+					controls
 					className="aspect-video w-full"
 				></video>
 			</div>
