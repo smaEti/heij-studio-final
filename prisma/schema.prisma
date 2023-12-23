@@ -23,8 +23,8 @@ model Projects {
   id Int @id @default(autoincrement())
   title String @db.VarChar(255)
   description String @db.Text
-  gif String
-  link String
+  preview String
+  video String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }

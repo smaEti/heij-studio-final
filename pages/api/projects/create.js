@@ -10,15 +10,15 @@ export default async function handler(req, res) {
         const schema = vine.object({
           title: vine.string(),
           description: vine.string(),
-          gif: vine.string(),
-          link: vine.string(),
+          preview: vine.string(),
+          video: vine.string(),
         });
-        const { title, description, gif, link } = req.body;
+        const { title, description, preview, video } = req.body;
         const data = {
           title: title,
           description: description,
-          gif: gif,
-          link: link,
+          preview: preview,
+          video: video,
         };
         await vine.validate({
           schema,
@@ -31,19 +31,19 @@ export default async function handler(req, res) {
           data.description == "" ||
           data.description == undefined ||
           data.description == null ||
-          data.gif == "" ||
-          data.gif == undefined ||
-          data.gif == null ||
-          data.link == "" ||
-          data.link == undefined ||
-          data.link == null
+          data.preview == "" ||
+          data.preview == undefined ||
+          data.preview == null ||
+          data.video == "" ||
+          data.video == undefined ||
+          data.video == null
         ) {
           res.status(422).send({ message: "fields are requierd!" });
         } else {
-          const result = await db.user.create({
+          const result = await db.projects.create({
             data,
           });
-          res.status(200).send(result);
+          res.status(200).json({message: "Success!"});
         }
       } catch (error) {
         return res.status(500).json({ message: error.message });

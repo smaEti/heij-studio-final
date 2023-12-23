@@ -8,13 +8,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 export default async function Dashboard() {
 	const session = await getServerSession(authOptions);
-	const data = await db.user.findMany({ orderBy: { id: "asc" } });
+	const data = await db.projects.findMany({ orderBy: { id: "asc" } });
 	return (
 		<div className="h-screen w-full lg:flex lg:gap-20 bg-[#EAEAEA]">
 			<DashboardDesktopNav session={session} />
 			<DashboardMobileNav session={session} />
 			<div className="w-full p-1 lg:w-2/3 flex flex-col mx-auto pt-20">
-				<Link href="/dashboard/addproject">
+				<Link href="/dashboard/addproject" className="lg:self-start self-center">
 					<Button className="lg:self-start self-center" variant="destructive">
 						Add Project
 					</Button>

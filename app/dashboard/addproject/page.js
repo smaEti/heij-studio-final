@@ -9,22 +9,26 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Textarea } from "@/components/ui/textarea";
-import UploadthingUploadButton from "@/components/UploadButton";
-export default function create() {
+import { Label } from "@/components/ui/label";
+import Upload from "@/utils/S3/uploadtobucket";
+import GetFileUrl from "@/utils/S3/getfileurl";
+import { useRouter } from 'next/navigation'
+export default function Create() {
 	const [data, setData] = useState({
 		title: "",
 		description: "",
 		preview: "",
 		video: "",
 	});
+	const router = useRouter()
 	return (
 		<div className="sm:w-full lg:w-5/12 container py-16 ">
 			<Card>
 				<CardHeader>
 					<CardTitle className="font-sans">Project Management</CardTitle>
 					<CardDescription className="font-sans">
-						All Fields Are Required
+						All Fields Are Required. While Uploading Files, Please Wait Till You
+						Recieve Confirmation.
 					</CardDescription>
 				</CardHeader>
 				<CardContent className="flex flex-col gap-3">
@@ -62,33 +66,48 @@ export default function create() {
 						}
 						className="font-Aleo"
 					/>
-					<label htmlFor="preview">Preview:</label>
-					<UploadthingUploadButton
-						id="preview"
-						name="preview"
-						onUploadComplete={(res) => {
-							setData({
-								...data,
-								preview: res.url,
-							});
-						}}
-					/>
-					<label htmlFor="video">Video URL:</label>
-					<Textarea
-						placeholder="Paste Your Video URL Here."
-						name="video"
-						id="video"
-						onChange={(e) => {
-							setData({
-								...data,
-								video: e.target.value,
-							});
-						}}
-					/>
+					<div>
+						<Label htmlFor="preview">Preview:</Label>
+						<div className="grid w-full justify-center items-center gap-1.5">
+							<Input
+								id="preview"
+								type="file"
+								onChange={(e) => {
+									Upload(e.target.files?.[0]);
+									const fileUrl = GetFileUrl(e.target.files?.[0].name);
+									setData({
+										...data,
+										preview: fileUrl,
+									});
+								}}
+							/>
+						</div>
+					</div>
+					<div>
+						<Label htmlFor="Video">Video:</Label>
+						<div className="grid w-full justify-center items-center gap-1.5">
+							<Input
+								id="Video"
+								type="file"
+								onChange={(e) => {
+									Upload(e.target.files?.[0]);
+									const fileUrl = GetFileUrl(e.target.files?.[0].name);
+									setData({
+										...data,
+										video: fileUrl,
+									});
+								}}
+							/>
+						</div>
+					</div>
 					<Button
-						onClick={() => {
-							createProject(data);
-							console.log(data);
+						onClick={async () => {
+							let result = await createProject(data);
+							if (result.message == "fields are requierd!") {
+								alert("Please Fill In All Of The Fields!");
+							} else if (result.message == "Success!") {
+								router.push('/dashboard')
+							}
 						}}
 					>
 						Add Project

@@ -9,8 +9,8 @@ export const columns = [
 		header: "ID",
 	},
 	{
-		accessorKey: "name",
-		header: "Name",
+		accessorKey: "title",
+		header: "Title",
 	},
 	{
 		id: "edit",
