@@ -41,5 +41,6 @@ async function deleteprojects(id) {
 		method: "DELETE",
 	});
 	const data = await response.json();
+	console.log(data)
 	window.location.reload();
 }

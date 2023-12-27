@@ -9,6 +9,7 @@ import Link from "next/link";
 export default async function Dashboard() {
 	const session = await getServerSession(authOptions);
 	const data = await db.projects.findMany({ orderBy: { id: "asc" } });
+	console.log(data);
 	return (
 		<div className="h-screen w-full lg:flex lg:gap-20 bg-[#EAEAEA]">
 			<DashboardDesktopNav session={session} />
