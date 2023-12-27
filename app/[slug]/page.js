@@ -1,7 +1,11 @@
 import MobileProjectNav from "@/components/MobileProjectNav";
 import DesktopProjectNav from "@/components/DesktopProjectNav";
+import { db } from "@/prisma/client";
 
-export default function project() {
+export default async function project({params}) {
+  const data =  await db.projects.findFirst({where : {id : parseInt(params.slug)}}) 
+  console.log(data)
+  
   return (
     <section>
       <div>
