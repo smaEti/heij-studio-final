@@ -10,6 +10,8 @@ export default function Hero() {
 					loop
 					muted
 					controls
+					controlsList="nodownload"
+					onContextMenu="return false;"
 					className="aspect-video w-full"
 				></video>
 			</div>
