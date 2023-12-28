@@ -28,7 +28,7 @@ export default function DashboardMobileNav({ session }) {
 						</h1>
 					</div>
 					<Link href="/dashboard">Manage Projects</Link>
-					<Link href="/">Contact Requests</Link>
+					<Link href="/dashboard/contactrequests">Contact Requests</Link>
 					<div>
 						<Button onClick={() => signOut()} variant="destructive" size="lg">
 							Signout

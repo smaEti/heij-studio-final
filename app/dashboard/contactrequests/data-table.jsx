@@ -17,9 +17,8 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import {columns} from "./DataTableProjectsColumns";
 
-export function DataTable({ data }) {
+export function DataTable({ columns, data }) {
 	const table = useReactTable({
 		data,
 		columns,
@@ -28,15 +27,18 @@ export function DataTable({ data }) {
 	});
 
 	return (
-		<div className="w-full mt-10">
-			<div className="rounded-md w-full border border-[#333333] font-Aleo">
+		<div dir="ltr" className="w-full mt-10">
+			<div className="rounded-md w-full border border-[#333333] font-Aleo ">
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
 							<TableRow key={headerGroup.id} className="border-[#333333]">
 								{headerGroup.headers.map((header) => {
 									return (
-										<TableHead key={header.id} className="text-center text-[#333333]">
+										<TableHead
+											key={header.id}
+											className="text-center text-[#333333]"
+										>
 											{header.isPlaceholder
 												? null
 												: flexRender(
@@ -57,7 +59,10 @@ export function DataTable({ data }) {
 									data-state={row.getIsSelected() && "selected"}
 								>
 									{row.getVisibleCells().map((cell) => (
-										<TableCell key={cell.id} className="text-center text-[#333333]">
+										<TableCell
+											key={cell.id}
+											className="text-center text-[#333333]"
+										>
 											{flexRender(
 												cell.column.columnDef.cell,
 												cell.getContext()

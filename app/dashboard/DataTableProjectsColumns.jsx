@@ -17,7 +17,7 @@ export const columns = [
 		cell: ({ row }) => {
 			const projects = row.original;
 			return (
-				<Link href={`/dashboard/projects/edit/${projects.id}`}>
+				<Link href={`/dashboard/${projects.id}`}>
 					<Button>Edit</Button>
 				</Link>
 			);

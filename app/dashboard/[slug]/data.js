@@ -13,12 +13,12 @@ import { Label } from "@/components/ui/label";
 import Upload from "@/utils/S3/uploadtobucket";
 import GetFileUrl from "@/utils/S3/getfileurl";
 import { useRouter } from "next/navigation";
-export default function Create() {
+export default function Edit({ projectData }) {
 	const [data, setData] = useState({
-		title: "",
-		description: "",
-		preview: "",
-		video: "",
+		title: projectData.title,
+		description: projectData.description,
+		preview: projectData.preview,
+		video: projectData.video,
 	});
 	const router = useRouter();
 	return (
@@ -27,7 +27,8 @@ export default function Create() {
 				<CardHeader>
 					<CardTitle className="font-sans">Project Management</CardTitle>
 					<CardDescription className="font-sans">
-						All Fields Are Required <br />
+						Any Unchanged Field Will Not Be Edited And Will Remain The Same{" "}
+						<br />
 						<span className="text-red-500 text-xl font-bold font-Aleo">
 							While Uploading Files, Please Wait Till You Recieve Confirmation.
 						</span>
@@ -107,13 +108,15 @@ export default function Create() {
 						</div>
 					</div>
 					<Button
-						onClick={async () => {
-							let result = await createProject(data);
-							if (result.message == "fields are requierd!") {
-								alert("Please Fill In All Of The Fields!");
-							} else if (result.message == "Success!") {
-								router.push("/dashboard");
-							}
+						onClick={() => {
+							let res = editProject(data, projectData.id);
+							res.then((e) => {
+								if (e.message) {
+									alert(e.message);
+								} else {
+									router.push("/dashboard");
+								}
+							});
 						}}
 					>
 						Add Project
@@ -123,9 +126,9 @@ export default function Create() {
 		</div>
 	);
 }
-async function createProject(data) {
-	const response = await fetch(`/api/projects/create`, {
-		method: "POST",
+async function editProject(data, slug) {
+	const response = await fetch(`/api/projects/${slug}`, {
+		method: "PUT",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(data),
 	});

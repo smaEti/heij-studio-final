@@ -23,7 +23,7 @@ export default function DashboardDesktopNav({ session }) {
 			<Link href="/dashboard" className="lg:text-lg xl:text-xl 2xl:text-2xl">
 				Manage Projects
 			</Link>
-			<Link href="/" className="lg:text-lg xl:text-xl 2xl:text-2xl">
+			<Link href="/dashboard/contactrequests" className="lg:text-lg xl:text-xl 2xl:text-2xl">
 				Contact Requests
 			</Link>
 			<div>
